@@ -1,7 +1,9 @@
 package com.example.alunos.ex03;
 
+        import android.content.DialogInterface;
         import android.content.Intent;
         import android.database.Cursor;
+        import android.support.v7.app.AlertDialog;
         import android.support.v7.app.AppCompatActivity;
         import android.os.Bundle;
         import android.view.View;
@@ -17,6 +19,7 @@ public class AlteraActivity extends AppCompatActivity {
     Cursor cursor;
     BancoController crud;
     String codigo;
+    AlertDialog alerta;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,13 +51,26 @@ public class AlteraActivity extends AppCompatActivity {
         deletar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                crud.apagarRegistro(Integer.parseInt(codigo));
-                Intent intent = new Intent(AlteraActivity.this, ConsultaActivity.class);
-                startActivity(intent);
-                finish();
+                AlertDialog.Builder builder = new AlertDialog.Builder(AlteraActivity.this);
+                builder.setTitle("Confirmar");
+                builder.setMessage("Deseja realmente apagar ?");
+                builder.setPositiveButton("Sim", new DialogInterface.OnClickListener(){
+                    @Override
+                    public void onClick(DialogInterface arg0, int arg1) {
+                        crud.apagarRegistro(Integer.parseInt(codigo));
+                        Intent intent = new Intent(AlteraActivity.this, ConsultaActivity.class);
+                        finish();
+                    }
+                });
+                builder.setNegativeButton("Não",new DialogInterface.OnClickListener(){
+                    @Override
+                    public void onClick(DialogInterface arg0, int arg1) {
+
+                    }
+                });
+                alerta = builder.create();
+                alerta.show();
             }
-
         });
-
     }
 }
