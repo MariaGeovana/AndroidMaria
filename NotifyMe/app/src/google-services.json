@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "581388534022",
+    "firebase_url": "https://cdc-teste-4195e.firebaseio.com",
+    "project_id": "cdc-teste-4195e",
+    "storage_bucket": "cdc-teste-4195e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:581388534022:android:168c221c4f8aab05",
+        "android_client_info": {
+          "package_name": "com.example.alunos.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "581388534022-grr0b526afb12nddlr6lge7j15v1o09u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnruNihenFki4Ehf8nNGGeOuodmYpojdg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
